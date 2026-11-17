@@ -549,6 +549,38 @@ footer ul a:hover { transform: translateX(4px); }
 
 ::selection { background: color-mix(in srgb, var(--accent) 30%, transparent); }
 
+/* ---------- Groclens (cyan from its lens icon; no screenshots yet, so a "what a scan shows" card) ---------- */
+:root { --scan-bg: #e4f3fa; --scan: #0a7fa8; --fern-bg: #fbf3ec; --fern: #3d7a57; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --scan-bg: #0d1630; --scan: #3fd8f2; --fern-bg: #14201a; --fern: #7fd1a3; } }
+:root[data-theme="dark"] { --scan-bg: #0d1630; --scan: #3fd8f2; --fern-bg: #14201a; --fern: #7fd1a3; }
+.app.groclens, .app-hero.groclens, .app-card.groclens { background: var(--scan-bg); }
+.app.groclens .btn, .app-hero.groclens .btn { background: var(--scan); border-color: var(--scan); color: var(--paper); }
+.app.groclens .btn.line { background: transparent; color: var(--ink); border-color: color-mix(in srgb, var(--scan) 45%, transparent); }
+.soon { --soon: var(--accent); display: inline-flex; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: .95rem;
+  border: 1.5px dashed color-mix(in srgb, var(--soon) 60%, transparent); color: var(--soon); }
+.soon svg { width: 17px; height: 17px; fill: currentColor; }
+.groclens .soon { --soon: var(--scan); }
+.dayfern .soon { --soon: var(--fern); }
+.scan-visual { background: var(--card); border: 1px solid color-mix(in srgb, var(--scan) 25%, var(--line)); border-radius: 28px; padding: 26px;
+  box-shadow: 0 30px 60px -40px rgba(0, 0, 0, .45); max-width: 460px; width: 100%; justify-self: center; }
+.scan-top { display: flex; align-items: center; gap: 14px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.scan-top img { width: 48px; height: 48px; border-radius: 12px; }
+.scan-top small { display: block; font-size: .8rem; color: var(--muted); }
+.scan-top strong { font-family: var(--display); font-weight: 650; letter-spacing: -.02em; font-size: 1.3rem; line-height: 1.1; }
+.scan-rows { list-style: none; margin: 0; padding: 0; }
+.scan-rows li { display: grid; grid-template-columns: 104px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: .93rem; }
+.scan-rows li:last-child { border-bottom: 0; padding-bottom: 0; }
+.scan-rows b { color: var(--scan); font-weight: 600; }
+.scan-rows span { color: var(--muted); }
+.app-card .shot.icon-shot { width: 170px; right: -18px; bottom: -36px; border-radius: 38px; }
+@media (max-width: 980px) { .app-card .shot.icon-shot { width: 120px; bottom: -24px; border-radius: 27px; } }
+@media (max-width: 420px) { .scan-rows li { grid-template-columns: 1fr; gap: 0; } }
+
+/* ---------- Dayfern (fern green) ---------- */
+.app.dayfern, .app-hero.dayfern, .app-card.dayfern { background: var(--fern-bg); }
+.app.dayfern .btn, .app-hero.dayfern .btn { background: var(--fern); border-color: var(--fern); color: var(--paper); }
+.app.dayfern .btn.line { background: transparent; color: var(--ink); border-color: color-mix(in srgb, var(--fern) 45%, transparent); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
@@ -560,14 +592,3 @@ footer ul a:hover { transform: translateX(4px); }
 
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
-
-/* Dayfern */
-:root { --fern-bg: #fbf3ec; --fern: #3d7a57; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fern-bg: #14201a; --fern: #7fd1a3; } }
-:root[data-theme="dark"] { --fern-bg: #14201a; --fern: #7fd1a3; }
-.app.dayfern, .app-hero.dayfern, .app-card.dayfern { background: var(--fern-bg); }
-.app.dayfern .btn, .app-hero.dayfern .btn { background: var(--fern); border-color: var(--fern); color: var(--paper); }
-.app.dayfern .btn.line { background: transparent; color: var(--ink); border-color: color-mix(in srgb, var(--fern) 45%, transparent); }
-.soon { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: .95rem;
-  border: 1.5px dashed color-mix(in srgb, var(--fern) 60%, transparent); color: var(--fern); }
-.soon svg { width: 18px; height: 18px; fill: currentColor; }
