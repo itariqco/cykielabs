@@ -560,3 +560,14 @@ footer ul a:hover { transform: translateX(4px); }
 
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* Dayfern */
+:root { --fern-bg: #fbf3ec; --fern: #3d7a57; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fern-bg: #14201a; --fern: #7fd1a3; } }
+:root[data-theme="dark"] { --fern-bg: #14201a; --fern: #7fd1a3; }
+.app.dayfern, .app-hero.dayfern, .app-card.dayfern { background: var(--fern-bg); }
+.app.dayfern .btn, .app-hero.dayfern .btn { background: var(--fern); border-color: var(--fern); color: var(--paper); }
+.app.dayfern .btn.line { background: transparent; color: var(--ink); border-color: color-mix(in srgb, var(--fern) 45%, transparent); }
+.soon { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: .95rem;
+  border: 1.5px dashed color-mix(in srgb, var(--fern) 60%, transparent); color: var(--fern); }
+.soon svg { width: 18px; height: 18px; fill: currentColor; }
