@@ -592,3 +592,71 @@ footer ul a:hover { transform: translateX(4px); }
 
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* ---------- FitLadder (deep red night, coral accent from its icon) ---------- */
+:root { --fit: #ff3d5e; --fit-ink: #fff1f3; --fit-grad: radial-gradient(120% 90% at 85% 0%, #5c1526 0%, #2a0f17 48%, #140a0d 100%); }
+.app.fitladder, .app-hero.fitladder, .app-card.fitladder { background: var(--fit-grad); color: var(--fit-ink); }
+.app.fitladder .btn, .app-hero.fitladder .btn { background: var(--fit); border-color: var(--fit); color: #fff; }
+.app.fitladder .btn.line { background: transparent; color: var(--fit-ink); border-color: rgba(255, 241, 243, .35); }
+.app-hero.fitladder .lead, .app-hero.fitladder p, .app.fitladder .desc { color: #f3d3da; }
+.app-hero.fitladder .facts-row b { color: #fff; }
+.app-card.fitladder .more { color: #ff8da0; }
+.app-card.groclens .more, .app.groclens .id small { color: var(--scan); }
+
+/* ---------- "New" news pill, app dock, card badge ---------- */
+.news { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; padding: 5px 14px 5px 5px; border-radius: 999px;
+  background: var(--card); border: 1px solid var(--line); text-decoration: none; font-size: .9rem; font-weight: 500;
+  transition: border-color .2s, transform .2s; }
+.news span { background: var(--accent); color: #fff; font-weight: 700; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
+.news i { font-style: normal; color: var(--accent); transition: transform .2s; }
+.news:hover { border-color: var(--ink); }
+.news:hover i { transform: translateX(3px); }
+.dock { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 34px; }
+.dock ul { list-style: none; margin: 0; padding: 0; display: flex; }
+.dock li + li { margin-left: -10px; }
+.dock a { display: block; border-radius: 13px; border: 3px solid var(--paper); transition: transform .25s cubic-bezier(.3, 1.4, .5, 1); position: relative; }
+.dock a:hover { transform: translateY(-6px) scale(1.08); z-index: 1; }
+.dock img { display: block; width: 44px; height: 44px; border-radius: 10px; }
+.dock > span { color: var(--muted); font-size: .92rem; }
+.dock b { color: var(--ink); font-weight: 600; }
+.app-card .badge { position: absolute; top: 22px; right: 22px; z-index: 2; background: var(--accent); color: #fff; font: 700 .7rem/1 "DM Sans", sans-serif;
+  letter-spacing: .08em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; }
+.app-card.fitladder .badge { background: var(--fit); }
+.app-card.groclens .badge { background: var(--scan); color: var(--paper); }
+
+/* ---------- just launched ---------- */
+.launch { padding: 40px 0 20px; }
+.launch .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; background: var(--card); border: 1px solid var(--line);
+  border-radius: 36px; padding: clamp(28px, 5vw, 56px); overflow: hidden; width: min(1180px, 100% - 24px); }
+.launch-copy p { font-size: 1.07rem; max-width: 46ch; margin-bottom: 26px; }
+.launch-pair { position: relative; display: flex; justify-content: center; gap: 22px; }
+.lp { position: relative; display: block; width: min(230px, 44%); border-radius: 26px; text-decoration: none;
+  transition: transform .4s cubic-bezier(.2, .7, .2, 1); }
+.lp:first-child { transform: rotate(-4deg) translateY(10px); }
+.lp:last-child { transform: rotate(4deg) translateY(-10px); }
+.lp:hover { transform: rotate(0) translateY(-8px); }
+.lp > img { display: block; width: 100%; height: auto; border-radius: 26px; box-shadow: 0 30px 60px -30px rgba(27, 24, 19, .6); }
+.lp-tag { position: absolute; left: 50%; bottom: -16px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px 5px 5px; font: 600 .88rem var(--display); color: var(--ink);
+  box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .45); }
+.lp-tag img { width: 28px; height: 28px; border-radius: 8px; }
+@media (max-width: 860px) { .launch .wrap { grid-template-columns: 1fr; gap: 40px; } .launch-pair { padding-bottom: 20px; } }
+
+/* ---------- release timeline ---------- */
+.journey { padding: 96px 0 20px; }
+.timeline { list-style: none; margin: 0; padding: 0 0 0 26px; position: relative; display: grid; gap: 14px; }
+.timeline::before { content: ""; position: absolute; left: 6px; top: 10px; bottom: 10px; width: 2px; border-radius: 2px;
+  background: linear-gradient(var(--accent), color-mix(in srgb, var(--accent) 15%, transparent)); }
+.timeline li { position: relative; display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: center; }
+.timeline li::before { content: ""; position: absolute; left: -26px; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%;
+  background: var(--paper); border: 3px solid var(--accent); }
+.timeline .when { font-size: .82rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }
+.timeline a { display: flex; align-items: center; gap: 14px; padding: 12px 16px 12px 12px; background: var(--card); border: 1px solid var(--line);
+  border-radius: 18px; text-decoration: none; transition: transform .25s cubic-bezier(.2, .7, .2, 1), border-color .2s; }
+.timeline a:hover { transform: translateX(6px); border-color: var(--ink); }
+.timeline a img { width: 40px; height: 40px; border-radius: 10px; flex: none; }
+.timeline b { display: block; font-family: var(--display); font-weight: 650; letter-spacing: -.02em; font-size: 1.1rem; line-height: 1.15; }
+.timeline small { color: var(--muted); font-size: .85rem; }
+.timeline .soon-item::before { border-style: dashed; border-color: var(--muted); }
+.timeline .soon-item a { border-style: dashed; }
+@media (max-width: 520px) { .timeline li { grid-template-columns: 1fr; gap: 6px; } .timeline li::before { top: 8px; margin-top: 0; } }

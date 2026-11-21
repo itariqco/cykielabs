@@ -125,7 +125,7 @@
     ".pillars a", ".app-grid > *", ".head-row", ".block .kicker + h2", ".band .wrap > *", ".rules li",
     ".about .wrap > *", "article.app", ".feature-grid > div", ".service-grid > div", ".steps li",
     ".sup-card", ".faq details", ".contact-grid a", ".next-card", ".panel", ".ticks li", ".prose > *",
-    ".stats .wrap > div", ".peek .gallery",
+    ".stats .wrap > div", ".peek .gallery", ".launch .wrap", ".timeline li", ".journey .two > div",
   ];
   const els = [];
   groups.forEach(sel => $$(sel).forEach(el => {
