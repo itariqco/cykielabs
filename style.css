@@ -660,3 +660,23 @@ footer ul a:hover { transform: translateX(4px); }
 .timeline .soon-item::before { border-style: dashed; border-color: var(--muted); }
 .timeline .soon-item a { border-style: dashed; }
 @media (max-width: 520px) { .timeline li { grid-template-columns: 1fr; gap: 6px; } .timeline li::before { top: 8px; margin-top: 0; } }
+
+/* ---------- Nur ul Ummah (night indigo with gold, from its crescent icon) ---------- */
+:root { --nur: #e9c46a; --nur-ink: #f6f1e3; --nur-grad: radial-gradient(120% 90% at 85% 0%, #34307a 0%, #17164a 48%, #0b0b26 100%); }
+.app.nur-ul-ummah, .app-hero.nur-ul-ummah, .app-card.nur-ul-ummah { background: var(--nur-grad); color: var(--nur-ink); }
+.app.nur-ul-ummah .btn, .app-hero.nur-ul-ummah .btn { background: var(--nur); border-color: var(--nur); color: #17164a; }
+.app.nur-ul-ummah .btn.line { background: transparent; color: var(--nur-ink); border-color: rgba(246, 241, 227, .35); }
+.app-hero.nur-ul-ummah .lead, .app-hero.nur-ul-ummah p, .app.nur-ul-ummah .desc { color: #ddd8f0; }
+.app-hero.nur-ul-ummah .facts-row b { color: var(--nur); }
+.app-card.nur-ul-ummah .more { color: var(--nur); }
+.app-card.nur-ul-ummah .badge { background: var(--nur); color: #17164a; }
+
+/* three new apps side by side */
+.launch-pair { gap: 16px; }
+.launch-pair .lp { width: min(200px, 31%); }
+.launch-pair .lp:nth-child(2) { transform: translateY(-14px); }
+.launch-pair .lp:nth-child(3) { transform: rotate(4deg) translateY(6px); }
+.launch-pair .lp:hover { transform: rotate(0) translateY(-10px); }
+.lp-tag { font-size: .8rem; }
+@media (max-width: 520px) { .lp-tag { padding: 4px; } .lp-tag { font-size: 0; gap: 0; } }
+.app-hero.nur-ul-ummah h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); }
